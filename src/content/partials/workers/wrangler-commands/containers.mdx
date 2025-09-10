@@ -160,3 +160,20 @@ wrangler containers push [TAG] [OPTIONS]
 - `--path-to-docker` <Type text="string" /> <MetaInfo text="optional" />
   - Path to your docker binary if it's not on `$PATH`.
   - Default: "docker"
+
+<AnchorHeading title="`ssh`" slug="containers-ssh" depth={3} />
+
+Connect to your container using SSH:
+
+```bash
+wrangler containers ssh [OPTIONS] CONTAINER_ID
+```
+
+You can also specify a command to run, instead of the default shell. For example:
+
+```bash
+wrangler containers ssh [OPTIONS] CONTAINER_ID -- ls -al
+```
+
+- `CONTAINER_ID` <Type text="string" /> <MetaInfo text="required" />
+  - The ID of the Container to SSH into.
